@@ -9,6 +9,7 @@ public class Money
     public double fifty_bath = 0;
     public double twenty_bath = 0;
     public double ten_bath = 0;
+    public double five_bath = 0;
     public double two_bath = 0;
     public double one_bath = 0;
     public double fifty_satang = 0;
@@ -37,23 +38,27 @@ public class Money
         else if(Unitmoney < 100 && Unitmoney >= 50)
         {
             fifty_bath = ++ fifty_bath;
-            Unitmoney = Unitmoney - 100;
+            Unitmoney = Unitmoney - 50;
         }
         else if(Unitmoney < 50 && Unitmoney >= 20)
         {
             twenty_bath = ++ twenty_bath;
-            Unitmoney = Unitmoney - 50;
+            Unitmoney = Unitmoney - 20;
         }
         else if(Unitmoney < 20 && Unitmoney >= 10)
         {
             ten_bath = ++ten_bath;
-            Unitmoney = Unitmoney - 20;
+            Unitmoney = Unitmoney - 10;
         }
-        else if(Unitmoney < 10 && Unitmoney >= 2)
+        else if(Unitmoney < 10 && Unitmoney >= 5)
+        {
+            five_bath = ++ five_bath;
+            Unitmoney = Unitmoney - 5;
+        }
+        else if(Unitmoney < 5 && Unitmoney >= 2)
         {
             two_bath = ++two_bath;
             Unitmoney = Unitmoney - 2;
-
         }
         else if(Unitmoney < 2 && Unitmoney >= 1)
         {
@@ -74,11 +79,11 @@ public class Money
         
 
         }while(Unitmoney > 0);
-        PrintAllmoney(thousand_bath, fivehundred_bath, onehundred_bath, fifty_bath, twenty_bath, ten_bath, two_bath, one_bath, fifty_satang,twenty_five_satang);
+        PrintAllmoney(thousand_bath, fivehundred_bath, onehundred_bath, fifty_bath, twenty_bath,five_bath, ten_bath, two_bath, one_bath, fifty_satang,twenty_five_satang);
         
     }
 
-    public static void PrintAllmoney(double thousand_bath, double fivehundred_bath, double onehundred_bath, double fifty_bath, double twenty_bath, double ten_bath, double two_bath, double one_bath, double fifty_satang,double twenty_five_satang)
+    public static void PrintAllmoney(double thousand_bath, double fivehundred_bath, double onehundred_bath, double fifty_bath, double twenty_bath, double ten_bath,double five_bath, double two_bath, double one_bath, double fifty_satang,double twenty_five_satang)
     {
         Console.WriteLine("1000 : {0}", thousand_bath );
         Console.WriteLine("500 : {0}", fivehundred_bath);
@@ -86,6 +91,9 @@ public class Money
         Console.WriteLine("50 : {0}", fifty_bath);
         Console.WriteLine("20 : {0}", twenty_bath);
         Console.WriteLine("10 : {0}", ten_bath);
+        Console.WriteLine("5 : {0}", five_bath);
+        Console.WriteLine("2 : {0}", two_bath);
+        Console.WriteLine("1 : {0}", one_bath);
         Console.WriteLine(".50 : {0}", fifty_satang);
         Console.WriteLine(".25 : {0}", twenty_five_satang);
     }
